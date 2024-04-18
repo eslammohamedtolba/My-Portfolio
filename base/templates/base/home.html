@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css\main.css' %}">
+    <title>Eslam Mohamed - Profile</title>
+</head>
+<body>
+    <header class="header">
+        <div class="pictureWithContacts">
+            <div class="profile-image">
+                <img src="{% static 'images\EslamMohamedTolba.jpg' %}" alt="Eslam Mohamed Profile Picture">
+            </div>
+            <div class="profile-links">
+                <a href="https://www.linkedin.com/in/eslam-mohamed-891811254/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/eslammohamedtolba" target="_blank">GitHub</a>
+                <a href="https://www.kaggle.com/eslammohamed100" target="_blank">Kaggle</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="name">Eslam Mohamed</div>
+            <div class="education">Computer Science and AI Student at Cairo University</div>
+            <div>Graduation Year: 2025</div>
+            <div>GPA: 3.3/4.0</div>
+            <div class="location">📍 Giza, Egypt</div>
+        </div>
+        <div class="contact">
+            +201552931168
+        </div>
+    </header>
+    <section class="main-content">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>
+                I am computer science and AI student at Cairo University, with
+                a focus on machine learning and deep learning. I am passionate
+                about applying AI to solve real-world problems and create positive
+                impact. I have completed several online courses, books and projects on
+                topics such as natural language processing, computer vision, neural
+                networks, and reinforcement learning. I am always eager to learn
+                new skills and technologies, and I enjoy collaborating with other like-minded people.
+                I am looking for opportunities to gain more hands-on experience and grow as an AI engineer.
+            </p>
+        </div>
+        <div class="Technical-Knowledge">
+            <h2>Technical Knowledge</h2>
+            {% for book in books %}
+                <div>
+                    <p class="title">{{book.title}}</p>
+                    <p class="about">
+                        <span>the key aspects of the book: </span>{{book.content}}
+                        <span>impace: </span>{{book.impact}}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="Projects">
+            <h2>Projects</h2>
+            {% for project in projects %}
+                <div>
+                    <a class="title" href="{{project.link}}" target="_blank">{{project.name}}</a>
+                    <p class="about">
+                        <span>the key aspects of the project:</span> {{project.projectkeyaspects}}
+                        <span>impact:</span>{{project.impact}}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>
